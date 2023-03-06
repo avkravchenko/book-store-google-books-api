@@ -1,0 +1,15 @@
+$contentWidth: 1120px;
+
+@import "reset";
+@import "header";
+@import "fonts";
+
+html {
+    font-size: $mainTextSize;
+
+    body {
+        min-height: 100vh;
+        font-family: $fontFamily;
+        width: 100%;
+    }
+}

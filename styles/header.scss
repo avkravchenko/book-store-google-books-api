@@ -1,0 +1,47 @@
+@import "colors";
+
+.nav {
+    display: flex;
+    max-width: $contentWidth;
+    margin: 0 auto;
+    min-height: 116px;
+    justify-content: space-between;
+    align-items: center;
+
+    .nav__logo {
+        font-weight: 700;
+        font-size: 2.4rem;
+    }
+
+    .nav__list__wrapper {
+        display: flex;
+        list-style: none;
+        max-width: 420px;
+        min-width: 410px;
+        align-items: center;
+
+        .nav__list__item {
+            margin: 0 20px;
+            font-size: 1rem;
+            text-transform: uppercase;
+
+            .nav__list__item__link {
+                text-decoration: none;
+                color: $paleText;
+            }
+
+            .nav__list__item__link--active {
+                color: $mainColor;
+                font-weight: 900;
+            }
+        }
+    }
+
+    .nav__buttons {
+        display: flex;
+        max-width: 120px;
+        justify-content: space-between;
+        min-width: 100px;
+        align-items: center;
+    }
+}
