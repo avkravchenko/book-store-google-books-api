@@ -1,0 +1,11 @@
+@import "cards";
+
+.main__content__books {
+    display: grid;
+    max-width: 1000px;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    margin-left: -13vw;
+    z-index: 1;
+}
+

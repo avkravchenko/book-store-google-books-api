@@ -1,0 +1,9 @@
+@import "categories";
+
+.main__content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    margin: 0 auto;
+    max-width: 1120px;
+    min-width: 300px;
+}

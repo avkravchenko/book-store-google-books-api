@@ -2,10 +2,9 @@
   "name": "home-work-12",
   "version": "1.0.0",
   "description": "the 12's home work in which i should make a book shop main page",
-  "main": "index.js",
   "scripts": {
     "test": "jest",
-    "build": "webpack"
+    "build": "webpack --mode development --watch"
   },
   "repository": {
     "type": "git",
@@ -19,6 +18,7 @@
   "homepage": "https://github.com/avkravchenko/hw12#readme",
   "devDependencies": {
     "jest": "^29.5.0",
-    "webpack": "^5.75.0"
+    "webpack": "^5.76.0",
+    "webpack-cli": "^5.0.1"
   }
 }

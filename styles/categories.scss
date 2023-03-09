@@ -1,0 +1,26 @@
+.main__content__categories {
+    grid-column: 1;
+
+    .main__content__categories__list {
+        
+        font-size: 1.2rem;
+        left: -139px;
+        position: relative;
+        background-color: #EFEEF6;
+        padding: 20px 145px;
+        line-height: 3.5rem;
+        list-style: none;
+
+        .main__content__categories__list__item {
+            min-width: 8vw;
+            color: #5C6A79;
+        } 
+
+        .main__content__categories__list__item--active {
+            font-weight: 700;
+            font-size: 1.6rem;
+        }
+
+        
+    }
+}

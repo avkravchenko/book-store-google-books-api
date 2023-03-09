@@ -4,6 +4,9 @@ $contentWidth: 1120px;
 @import "header";
 @import "fonts";
 @import "main-slider";
+@import "main__content";
+@import "books";
+@import "btn-loader";
 
 html {
     font-size: $mainTextSize;
