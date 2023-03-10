@@ -24,11 +24,23 @@ categories.forEach(category => {
       const pics = document.querySelectorAll('.main__content__books__card__image');
       const auth = document.querySelectorAll('.main__content__books__card__description__authors');
       const title = document.querySelectorAll('.main__content__books__card__description__title');
-      console.log(auth);
+      const desc = document.querySelectorAll('.main__content__books__card__description__text');
+
       pics.forEach(pic => {
         pic.innerHTML = '';
       });
 
+      auth.forEach(auth => {
+        auth.innerHTML = '';
+      });
+
+      title.forEach(title => {
+        title.innerHTML = '';
+      });
+
+      desc.forEach(desc => {
+        desc.innerHTML = '';
+      });
 
       books.forEach((book, index) => {
         const newImg = document.createElement("img");
@@ -36,16 +48,24 @@ categories.forEach(category => {
         newImg.style.minWidth = "100%";
         newImg.style.maxHeight = "230px";
         pics[index].appendChild(newImg);
-        console.log(book)
+
 
         const newAuth = document.createElement("p");
         newAuth.textContent = book.volumeInfo.authors.join(", ");
-        auth[index].appendChild(newAuth)
+        auth[index].appendChild(newAuth);
 
 
         const newTitle = document.createElement("h3");
         newTitle.textContent = book.volumeInfo.title;
-        title[index].appendChild(newTitle)
+        title[index].appendChild(newTitle);
+
+        const newDescription = document.createElement("p");
+        newDescription.textContent = book.volumeInfo.description.slice(0, 100) + "...";
+        
+
+
+        desc[index].appendChild(newDescription);
+        
       })
 
 
