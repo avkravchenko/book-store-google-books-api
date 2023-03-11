@@ -43,5 +43,25 @@
         justify-content: space-between;
         min-width: 100px;
         align-items: center;
+
+        .nav__buttons-list__image--active {
+            position: relative;
+
+            .nav__buttons__image__span {
+                display: flex;
+                position: absolute;
+                align-items: center;
+                justify-content: center;
+                height: 15px;
+                width: 15px;
+                border-radius: 10px;
+                background-color: red;
+                top: 7px;
+                right: 5px;
+                color: aliceblue;
+            }
+        }
+
+
     }
 }

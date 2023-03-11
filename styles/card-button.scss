@@ -1,0 +1,19 @@
+
+
+
+.main__content__books__card__description__in-cart {
+    display: block;
+    background-color: #fff;
+    padding: 20px 4vw;
+    border-style: solid;
+    border-color: #4C3DB2;
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: #4C3DB2;
+    cursor: pointer;
+}
+
+.main__content__books__card__description__in-cart--active {
+    border-color: #EEEDF5;
+}
+
