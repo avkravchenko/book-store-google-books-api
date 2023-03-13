@@ -29,16 +29,16 @@
       .nav .nav__list__wrapper .nav__list__item .nav__list__item__link--active {
         color: #000;
         font-weight: 900; }
-  .nav .nav__buttons {
+  .nav .nav__divs {
     display: flex;
     max-width: 120px;
     justify-content: space-between;
     min-width: 100px;
     align-items: center; }
-    .nav .nav__buttons .nav__buttons-list__image--active {
+    .nav .nav__divs .nav__divs-list__image--active {
       position: relative; }
-      .nav .nav__buttons .nav__buttons-list__image--active .nav__buttons__image__span {
-        display: flex;
+      .nav .nav__divs .nav__divs-list__image--active .nav__divs__image__span, .nav .nav__divs .nav__divs-list__image--active .nav__divs__image__span--active {
+        display: none;
         position: absolute;
         align-items: center;
         justify-content: center;
@@ -49,6 +49,8 @@
         top: 7px;
         right: 5px;
         color: aliceblue; }
+      .nav .nav__divs .nav__divs-list__image--active .nav__divs__image__span--active {
+        display: flex; }
 
 main {
   overflow: hidden; }

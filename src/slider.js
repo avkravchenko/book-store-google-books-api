@@ -2,7 +2,6 @@ export function mySlider(){
 
 const sliderImages = document.querySelectorAll('.main__slider__image');
 const sliderDots = document.querySelectorAll('.main__slider__dot');
-const apiKey = 'AIzaSyBc5NuOilS_JP__fYBv2HGuO3fsqqR9tfo';
 
 let currentSlide = 0;
 let currentDot = 0;
@@ -22,6 +21,7 @@ function automaticSlider(){
 let interval = setInterval(automaticSlider, 5000);
 
 sliderDots.forEach((dot, index) => {
+  dot.style.cursor = "pointer";
   dot.addEventListener('click', () => {
     
     sliderImages.forEach((slide) => {

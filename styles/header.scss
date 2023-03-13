@@ -37,18 +37,18 @@
         }
     }
 
-    .nav__buttons {
+    .nav__divs {
         display: flex;
         max-width: 120px;
         justify-content: space-between;
         min-width: 100px;
         align-items: center;
 
-        .nav__buttons-list__image--active {
+        .nav__divs-list__image--active {
             position: relative;
 
-            .nav__buttons__image__span {
-                display: flex;
+            .nav__divs__image__span {
+                display: none;
                 position: absolute;
                 align-items: center;
                 justify-content: center;
@@ -59,6 +59,11 @@
                 top: 7px;
                 right: 5px;
                 color: aliceblue;
+            }
+
+            .nav__divs__image__span--active {
+                @extend .nav__divs__image__span;
+                display: flex;
             }
         }
 
