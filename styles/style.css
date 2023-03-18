@@ -145,12 +145,14 @@ main {
   margin-left: -13vw;
   z-index: 1; }
 
-.main__content__books__button {
-  grid-column: 1 / 3;
+.main__content__books__wrapper {
+  display: block;
   margin: 30px auto;
-  max-width: 300px;
-  min-height: 100px;
-  padding: 0 50px; }
+  text-align: center; }
+  .main__content__books__wrapper .main__content__books__wrapper__button {
+    max-width: 300px;
+    min-height: 100px;
+    padding: 0 50px; }
 
 .main__content__books__card__description__in-cart {
   display: block;
@@ -160,11 +162,14 @@ main {
   border-color: #4C3DB2;
   text-transform: uppercase;
   font-size: 1rem;
+  font-weight: 700;
   color: #4C3DB2;
   cursor: pointer; }
 
 .main__content__books__card__description__in-cart--active {
-  border-color: #EEEDF5; }
+  border-color: #EEEDF5;
+  color: black;
+  font-weight: 700; }
 
 html {
   font-size: 10px; }
