@@ -107,7 +107,8 @@ main {
     list-style: none; }
     .main__content__categories .main__content__categories__list .main__content__categories__list__item {
       min-width: 8vw;
-      color: #5C6A79; }
+      color: #5C6A79;
+      cursor: pointer; }
     .main__content__categories .main__content__categories__list .main__content__categories__list__item--active {
       font-weight: 700;
       font-size: 1.6rem; }
