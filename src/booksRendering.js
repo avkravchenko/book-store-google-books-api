@@ -1,3 +1,5 @@
+import { setId } from "./setIdToCollection";
+
 export function booksRendering(place, data){
     data.forEach(item => {
         const booksCard = document.createElement('div');
@@ -14,4 +16,6 @@ export function booksRendering(place, data){
         `
         place.appendChild(booksCard)
     })
+    
+    setId(place, data);
 }
