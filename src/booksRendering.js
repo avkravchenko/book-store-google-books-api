@@ -1,5 +1,4 @@
 import { getFromLocal } from "./getFromLocal";
-import { setId } from "./setIdToCollection";
 import { handleBtnClick } from "./buttonsLogic";
 
 export function booksRendering(place, data, cart){
@@ -16,7 +15,7 @@ export function booksRendering(place, data, cart){
             
             <div class="main__content__books__card__description__text">${item.volumeInfo.description ? item.volumeInfo.description.slice(0, 100) + "..." : "Description not found"}</div>
             <div class="main__content__books__card__description__price"><strong>${item.saleInfo && item.saleInfo.listPrice ? item.saleInfo.listPrice.amount + " " + item.saleInfo.listPrice.currencyCode : "Price not defined"}</strong></div>
-            <div class="main__content__books__card__description__button-container"><button class="main__content__books__card__description__in-cart${(dataFromLocal[item.id]) ? ' main__content__books__card__description__in-cart--active' : ''}">${(dataFromLocal[item.id]) ? 'in the cart' : 'Buy now'}</button></div>
+            <div class="main__content__books__card__description__button-container"><button data-id =${item.id} class="main__content__books__card__description__in-cart${(dataFromLocal[item.id]) ? ' main__content__books__card__description__in-cart--active' : ''}">${(dataFromLocal[item.id]) ? 'in the cart' : 'Buy now'}</button></div>
           </div>
         `
       } else{
@@ -36,6 +35,6 @@ export function booksRendering(place, data, cart){
     })
     
 
-    setId(place, data);
+    /* setId(place, data); */
     handleBtnClick(place, cart);
 }

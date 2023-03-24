@@ -1,11 +1,12 @@
 import { booksRendering } from "./booksRendering";
-import { activeButton } from "./buttonsLogic";
 import { collectChildren } from "./collectChildren";
 import { fetchData } from "./fetchData";
-import { getFromLocal } from "./getFromLocal";
 import { loadMore } from "./loadMore";
 import { removeBooks } from "./removeBooks";
 import { mySlider } from "./slider";
+
+
+
 
 mySlider();
 
@@ -18,8 +19,10 @@ const categoriesList = document.querySelector('.main__content__categories__list'
 let clickedCategory = '';
 let activeCategory = null;
 let startIndex = 0;
-let counter = 0;
 const cart = {};
+
+
+
 
 
 categoriesList.addEventListener('click', (e) => {
@@ -47,9 +50,10 @@ categoriesList.addEventListener('click', (e) => {
     .catch(error => console.log(error));
 
 
-    loadMore(newButtonElem, clickedCategory, startIndex, pasteBooks);
+    loadMore(newButtonElem, clickedCategory, startIndex, pasteBooks, cart);
   }
 })
 
 //get data for the first category and render it
 categoriesList.firstElementChild.click();
+
