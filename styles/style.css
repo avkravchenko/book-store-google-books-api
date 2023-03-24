@@ -155,7 +155,7 @@ main {
     min-height: 100px;
     padding: 0 50px; }
 
-.main__content__books__card__description__in-cart {
+.main__content__books__card__description__in-cart, .main__content__books__card__description__in-cart--active {
   display: block;
   background-color: #fff;
   padding: 20px 4vw;

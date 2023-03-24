@@ -1,64 +1,45 @@
-import { removeItemFromLocal } from "./removeItemFromLocal";
-import { addToLocal } from "./toLocalStorage";
+import { addToCart } from "./addToCart";
+import { getFromLocal } from "./getFromLocal";
+import { removeFromCart } from "./removeFromCart";
+import { removeFromLocal } from "./removeFromLocal";
 
-function addToCart(item, cart) {
-    cart[item] = true;
-    console.log(cart);
-    addToLocal(cart)
-}
 
-function removeFromCart(item, cart) {
-    delete cart[item];
-    console.log(cart);
-    removeItemFromLocal(cart[item])
-}
 
-function test(e, cart) {
-    if (e.target.classList.contains('main__content__books__card__description__in-cart')) {
-      let selectedButton = e.target;
-      let clickedBtnId = selectedButton.getAttribute('data-id');
-      console.log(clickedBtnId);
+
+
+export function handleBtnClick(place, cart) {
+    let data = getFromLocal();
   
-      selectedButton.classList.toggle('main__content__books__card__description__in-cart--active');
+    function handleClick(e) {
+      const clickedButton = e.target;
+      const clickedButtonId = clickedButton.getAttribute('data-id');
   
-      if (!cart[clickedBtnId]) {
-        addToCart(clickedBtnId, cart);
-        selectedButton.textContent = 'In the cart';
+      if (!cart[clickedButtonId]) {
+        addToCart(clickedButtonId, cart);
+        clickedButton.textContent = "in the cart";
+        clickedButton.classList.add('main__content__books__card__description__in-cart--active');
+        console.log(cart)
       } else {
-        removeFromCart(clickedBtnId, cart);
-        selectedButton.textContent = 'Buy now';
+        removeFromCart(clickedButtonId, cart);
+        removeFromLocal(clickedButtonId);
+        clickedButton.textContent = "Buy now";
+        clickedButton.classList.remove('main__content__books__card__description__in-cart--active');
+        console.log(cart)
       }
+  
+      if (data[clickedButtonId]){
+        removeFromLocal(clickedButtonId);
+        clickedButton.classList.remove('main__content__books__card__description__in-cart--active');
+      } 
+  
     }
+  
+    // check if place already has an event listener
+    if (place.onclick) {
+      place.removeEventListener('click', place.onclick);
+    }
+  
+    place.onclick = handleClick;
   }
   
-  export function activeButton(parent, cart) {
-    let clickAdded = false;
-  
-    function handleClick(event) {
-      test(event, cart);
-    }
-  
-    function addClick() {
-      parent.addEventListener('click', handleClick);
-      clickAdded = true;
-    }
-  
-    function removeClick() {
-      parent.removeEventListener('click', handleClick);
-      clickAdded = false;
-    }
-  
-    if (!clickAdded) {
-      addClick();
-    }
-  
-    else {
-      removeClick();
-    }
-  }
-  
-  
-      
-
-    
   
