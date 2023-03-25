@@ -4,7 +4,8 @@ import { removeFromCart } from "./removeFromCart";
 import { removeFromLocal } from "./removeFromLocal";
 
 
-
+let counter = 0
+const indi = document.querySelector('.nav__divs__image__span');
 
 
 export function handleBtnClick(place, cart) {
@@ -19,12 +20,20 @@ export function handleBtnClick(place, cart) {
         clickedButton.textContent = "in the cart";
         clickedButton.classList.add('main__content__books__card__description__in-cart--active');
         console.log(cart)
+        counter++;
+        indi.innerHTML = counter;
+        indi.style.display = 'flex';
+        console.log(counter)
       } else {
         removeFromCart(clickedButtonId, cart);
         removeFromLocal(clickedButtonId);
         clickedButton.textContent = "Buy now";
         clickedButton.classList.remove('main__content__books__card__description__in-cart--active');
         console.log(cart)
+        counter--;
+        (counter > 0) ? indi.style.display = 'flex' : indi.style.display = 'none';
+        indi.innerHTML = counter;
+        console.log(counter)
       }
   
       if (data[clickedButtonId]){

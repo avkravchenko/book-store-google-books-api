@@ -1,8 +1,6 @@
 import { booksRendering } from "./booksRendering";
-import { activeButton } from "./buttonsLogic";
 import { collectChildren } from "./collectChildren";
 import { fetchData } from "./fetchData";
-import { getFromLocal } from "./getFromLocal";
 import { loadMore } from "./loadMore";
 import { removeBooks } from "./removeBooks";
 import { mySlider } from "./slider";
@@ -47,7 +45,7 @@ categoriesList.addEventListener('click', (e) => {
     .catch(error => console.log(error));
 
 
-    loadMore(newButtonElem, clickedCategory, startIndex, pasteBooks);
+    loadMore(newButtonElem, clickedCategory, startIndex, pasteBooks, cart);
   }
 })
 
