@@ -7,8 +7,6 @@ import { mySlider } from "./slider";
 
 mySlider();
 
-
-
 const buttonHolder = document.querySelector('.main__content__books__wrapper'); 
 let newButtonElem = null; 
 const pasteBooks = document.querySelector('.main__content__books');
