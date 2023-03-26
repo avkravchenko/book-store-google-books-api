@@ -137,6 +137,8 @@ main {
     padding-left: 2rem;
     line-height: 2rem;
     gap: 1rem; }
+    .main__content__books__card .main__content__books__card__description .main__content__books__card__description__rating {
+      color: goldenrod; }
 
 .main__content__books {
   display: grid;
