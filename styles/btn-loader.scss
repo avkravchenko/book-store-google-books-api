@@ -1,12 +1,11 @@
 .main__content__books__wrapper {
-    display: block;
-    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+    margin: 100px auto;
     text-align: center;
     
     .main__content__books__wrapper__button {
-        max-width: 300px;
-        min-height: 100px;
-        padding: 0 50px;
+        @extend .main__content__books__card__description__in-cart;
     }
 }
 

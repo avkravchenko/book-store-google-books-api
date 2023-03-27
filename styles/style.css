@@ -3,6 +3,13 @@
   margin: 0;
   padding: 0; }
 
+header {
+  top: 0;
+  background-color: #fff;
+  min-width: 100%;
+  z-index: 2;
+  position: fixed; }
+
 .nav {
   display: flex;
   max-width: 1120px;
@@ -53,7 +60,8 @@
         display: flex; }
 
 main {
-  overflow: hidden; }
+  overflow: hidden;
+  margin-top: 9vh; }
   main .main__slider {
     margin: 0 auto;
     max-width: 1120px;
@@ -105,13 +113,17 @@ main {
     padding: 20px 145px;
     line-height: 3.5rem;
     list-style: none; }
+    .main__content__categories .main__content__categories__list ::marker {
+      color: #9E98DC;
+      font-size: 1.9rem; }
     .main__content__categories .main__content__categories__list .main__content__categories__list__item {
       min-width: 8vw;
       color: #5C6A79;
       cursor: pointer; }
     .main__content__categories .main__content__categories__list .main__content__categories__list__item--active {
       font-weight: 700;
-      font-size: 1.6rem; }
+      font-size: 1.6rem;
+      list-style: disc; }
 
 .main__content {
   display: grid;
@@ -136,7 +148,7 @@ main {
     justify-content: center;
     padding-left: 2rem;
     line-height: 2rem;
-    gap: 1rem; }
+    gap: .5rem; }
     .main__content__books__card .main__content__books__card__description .main__content__books__card__description__rating {
       color: goldenrod; }
 
@@ -149,18 +161,15 @@ main {
   z-index: 1; }
 
 .main__content__books__wrapper {
-  display: block;
-  margin: 30px auto;
+  display: flex;
+  justify-content: center;
+  margin: 100px auto;
   text-align: center; }
-  .main__content__books__wrapper .main__content__books__wrapper__button {
-    max-width: 300px;
-    min-height: 100px;
-    padding: 0 50px; }
 
-.main__content__books__card__description__in-cart, .main__content__books__card__description__in-cart--active {
+.main__content__books__card__description__in-cart, .main__content__books__wrapper .main__content__books__wrapper__button, .main__content__books__card__description__in-cart--active {
   display: block;
   background-color: #fff;
-  padding: 20px 4vw;
+  padding: 20px 3vw;
   border-style: solid;
   border-color: #4C3DB2;
   text-transform: uppercase;

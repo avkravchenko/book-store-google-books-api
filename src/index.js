@@ -35,6 +35,7 @@ categoriesList.addEventListener('click', (e) => {
     //add "load more" button
     newButtonElem = document.createElement('button');
     newButtonElem.innerHTML = "load more";
+    newButtonElem.classList.add('main__content__books__wrapper__button')
     buttonHolder.appendChild(newButtonElem);
 
     //get data from Google books API and render it
