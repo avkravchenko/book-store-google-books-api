@@ -1,18 +1,21 @@
-export function counterLogicAdd (item, indi, counterData) {
-    if(counterData){
-        localStorage.setItem('counter', item)
-        indi.innerHTML = JSON.parse(localStorage.getItem('counter'));
-        indi.style.display = 'flex';
-    }
-    
+import { getFromLocal } from "./getFromLocal";
+
+
+
+export function counterLogicAdd (indi) {
+    const data = getFromLocal();
+    let quantity = Object.keys(data).length;
+    indi.innerHTML =  quantity + " ";
+    indi.style.display = 'flex';
 }
 
-export function counterLogicRemove (item, indi) {
-    if (item) {
-        let parsedCounter = JSON.parse(item);
-        parsedCounter--
-        localStorage.setItem('counter', parsedCounter)
-    }
+export function counterLogicRemove (indi) {
+    const data = getFromLocal();
+    let quantity = Object.keys(data).length;
+    indi.textContent = quantity;
 
-    indi.innerHTML = JSON.parse(localStorage.getItem('counter'));
+    if (quantity === 0) {
+        indi.textContent = '';
+        indi.style.display = 'none';
+    }
 }

@@ -4,32 +4,30 @@ import { getFromLocal } from "./getFromLocal";
 import { removeFromCart } from "./removeFromCart";
 import { removeFromLocal } from "./removeFromLocal";
 
-
-
 const indi = document.querySelector('.nav__divs__image__span');
 
+let initialCounterData = getFromLocal();
+let quantityInLocal = Object.keys(initialCounterData).length;
 
-let initialCounterData = JSON.parse(localStorage.getItem('counter')) ;
 if (initialCounterData) {
-  indi.innerHTML = initialCounterData;
+  indi.innerHTML = quantityInLocal;
   indi.style.display = 'flex';
-} else {
-  indi.innerHTML = '';
+} 
+
+if (quantityInLocal === 0) {
+  indi.textContent = '';
   indi.style.display = 'none';
-  localStorage.setItem('counter', 0);
 }
 
-
 export function handleBtnClick(place, cart) {
-    let counter = 0;
+  let counter = 0;
     
     function handleClick(e) {
       const data = getFromLocal();
-
+      
       if(e.target.classList.contains('main__content__books__card__description__in-cart')) {
         const clickedButton = e.target;
         const clickedButtonId = clickedButton.getAttribute('data-id');
-        let counterData = localStorage.getItem('counter');
 
         if (data[clickedButtonId]) {
           removeFromCart(clickedButtonId, cart);
@@ -37,7 +35,7 @@ export function handleBtnClick(place, cart) {
           clickedButton.textContent = "Buy now";
           clickedButton.classList.remove('main__content__books__card__description__in-cart--active');
           counter--
-          counterLogicRemove(counterData, indi)
+          counterLogicRemove(indi)
           
           
         } else {
@@ -45,7 +43,7 @@ export function handleBtnClick(place, cart) {
           clickedButton.textContent = "in the cart";
           clickedButton.classList.add('main__content__books__card__description__in-cart--active');
           counter++
-          counterLogicAdd(counter, indi, counterData)
+          counterLogicAdd(indi)
         }
       }
     }
