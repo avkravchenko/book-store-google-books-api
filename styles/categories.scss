@@ -25,7 +25,14 @@
             font-size: 1.6rem;
             list-style: disc;
         }
-
-        
     }
+}
+
+@media screen and (max-width: 450px) {
+    .main__content__categories{
+        .main__content__categories__list {
+            position: static;
+        }
+    }
+    
 }

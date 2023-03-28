@@ -4,8 +4,22 @@
     display: grid;
     max-width: 1000px;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
+    grid-gap: 55px;
     margin-left: -13vw;
     z-index: 1;
+}
+
+@media only screen and (max-width: 650px) {
+    .main__content__books {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .main__content__books {
+        max-width: 326px;
+        margin: 44px auto;
+        text-align: center;
+    }
 }
 
