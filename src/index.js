@@ -17,14 +17,15 @@ const cart = {};
 mySlider();
 
 categoriesList.addEventListener('click', (e) => {
-  removeBooks(pasteBooks)
-  collectChildren(categoriesList)
-  
-  if (newButtonElem) {
-    newButtonElem.remove(); 
-  }
+ 
   
   if (e.target.classList.contains('main__content__categories__list__item')) {
+    removeBooks(pasteBooks)
+    collectChildren(categoriesList)
+    
+    if (newButtonElem) {
+      newButtonElem.remove(); 
+    }
 
     clickedCategory = e.target.textContent;
     activeCategory = e.target;
