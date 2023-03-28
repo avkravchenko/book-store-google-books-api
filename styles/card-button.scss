@@ -18,3 +18,9 @@
     font-weight: 700;
 }
 
+@media screen and (max-width: 450px) {
+    .main__content__books__card__description__in-cart {
+        padding: 20px 15vw;
+    }
+}
+
