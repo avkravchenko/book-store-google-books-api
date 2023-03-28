@@ -2,7 +2,6 @@
     grid-column: 1;
 
     .main__content__categories__list {
-        
         font-size: 1.2rem;
         left: -139px;
         position: relative;
@@ -10,17 +9,30 @@
         padding: 20px 145px;
         line-height: 3.5rem;
         list-style: none;
+        & ::marker {
+            color: $purple;
+            font-size:  1.9rem;
+        }
 
         .main__content__categories__list__item {
             min-width: 8vw;
             color: #5C6A79;
+            cursor: pointer;
         } 
 
         .main__content__categories__list__item--active {
             font-weight: 700;
             font-size: 1.6rem;
+            list-style: disc;
         }
-
-        
     }
+}
+
+@media screen and (max-width: 450px) {
+    .main__content__categories{
+        .main__content__categories__list {
+            position: static;
+        }
+    }
+    
 }

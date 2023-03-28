@@ -1,19 +1,26 @@
-
-
-
 .main__content__books__card__description__in-cart {
     display: block;
     background-color: #fff;
-    padding: 20px 4vw;
+    padding: 20px 3vw;
     border-style: solid;
     border-color: #4C3DB2;
     text-transform: uppercase;
     font-size: 1rem;
+    font-weight: 700;
     color: #4C3DB2;
     cursor: pointer;
 }
 
 .main__content__books__card__description__in-cart--active {
+    @extend .main__content__books__card__description__in-cart;
     border-color: #EEEDF5;
+    color: black;
+    font-weight: 700;
+}
+
+@media screen and (max-width: 450px) {
+    .main__content__books__card__description__in-cart {
+        padding: 20px 15vw;
+    }
 }
 
