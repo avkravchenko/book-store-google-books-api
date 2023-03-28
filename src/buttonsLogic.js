@@ -37,7 +37,6 @@ export function handleBtnClick(place, cart) {
           counter--
           counterLogicRemove(indi)
           
-          
         } else {
           addToCart(clickedButtonId, cart);
           clickedButton.textContent = "in the cart";
